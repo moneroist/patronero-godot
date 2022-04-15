@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Images/loader.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Loader/Loader.gd" type="Script" id=2]
+
+[node name="Loader" type="TextureRect"]
+margin_right = 104.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( 52, 52 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="resized" from="." to="." method="_on_Loader_resized"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
